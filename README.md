@@ -2,15 +2,36 @@
 Monitor remote resource for changes
 
 
+# App
+```javascript
+var glados = require('glados')
+
+var watcher = glados('http://example.com/sensitive_data.html', 1000*60)
+.on('change',function(diff){
+	// do something with diff
+})
+.on('connection',function(data){ // connection event on first response
+	// data = response from first poll
+})
+.on('error',function(err){
+	// we have some problem connecting with resource
+})
+```
+
+
+# CLI Wrapper
+`-n` - poll interval in ms<br />
+`-p` - optional endpoint to post diff on change<br />
+`-m` - optional email address to send diff on change<br />
+```bash
+node cli.js http://example.com/sensitive_data.html -n60000 \
+-p http://myapi.example.com/notify_change \
+-m ohsosexybrit@gmail.com
+```
+
 
 ### To Do
-- cli script
-	- accept: watch, endpoints for handlers
-	- what to do if thing goes down
-		- probly boot back up
-		- save data on hand so when we boot back up, we wont have missed a change
-- consider calling back with untreated diffLines(), 2 advantages:
-	- we can swap out diffLines with any method from diff module
-	- listeners can present pretty reports
-- finish tests + travisit
-- readme
+- Handle cli script erroring out
+	- Write forever example, or parent script
+	- Save data on hand so when we boot back up, we won't have missed a change
+- Finish Readme
