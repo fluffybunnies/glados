@@ -38,8 +38,8 @@ test('worky',function(t){
 
 	failback = setTimeout(function(){
 		//s._connections && s.close();
-		//t.fail();
 		s.close();
+		t.fail();
 	},2000);
 
 });
