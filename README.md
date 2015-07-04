@@ -33,7 +33,6 @@ node cli.js http://example.com/sensitive_data.html -n60000 \
 
 
 ### To Do
-- Handle cli script erroring out
-	- Write forever example, or parent script
+- Wriate parent script + example to forever cli.js
 	- Save data on hand so when we boot back up, we won't have missed a change
 - Finish Readme
