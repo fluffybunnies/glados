@@ -4,7 +4,7 @@
 Monitor remote resource for changes
 
 
-# App
+### App
 ```javascript
 var glados = require('glados')
 
@@ -21,7 +21,7 @@ var watcher = glados('http://example.com/sensitive_data.html', 1000*60)
 ```
 
 
-# CLI Wrapper
+### CLI Wrapper
 `-n` - poll interval in ms<br />
 `-p` - optional endpoint to post diff on change<br />
 `-m` - optional email address to send diff on change<br />
