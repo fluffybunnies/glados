@@ -2,7 +2,7 @@
 var events = require('events')
 ,http = require('http')
 ,diff = require('diff')
-,httpGet = require('./httpget.js')
+,httpGet = require('./lib/http_get.js')
 ,defaultPollInterval = 1000*60
 
 module.exports = function(url, pollInterval){
@@ -41,19 +41,9 @@ module.exports = function(url, pollInterval){
 			}
 			if (lastPollData != thisPollData && lastPollData !== undef) {
 				var d = diff.diffLines(lastPollData,thisPollData);
-				if (!d[1]) {
+				if (!d[1])
 					return w.emit('error','new data but diff algo failed to notice');
-				}
-				var res = {
-					added: []
-					,removed: []
-				}
-				d.forEach(function(part){
-					if (!(part.added || part.removed)) return;
-					var arr = res[part.added ? 'added' : 'removed'];
-					arr.push.apply(arr, part.value.replace(/\n$/,'').split('\n'));
-				});
-				w.emit('change',res);
+				w.emit('change',d);
 				if (stopped) return;
 			}
 			lastPollData = thisPollData;

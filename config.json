@@ -1,0 +1,11 @@
+{
+"mailTransport": "gmail"
+
+,"gmailUser": ""
+,"gmailPass": ""
+
+,"awsAccessKey": ""
+,"awsAccessSecret": ""
+,"awsRegion": "us-east-1"
+,"sesMailFrom": ""
+}

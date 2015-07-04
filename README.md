@@ -14,4 +14,3 @@ Monitor remote resource for changes
 	- listeners can present pretty reports
 - finish tests + travisit
 - readme
-
