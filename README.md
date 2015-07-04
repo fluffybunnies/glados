@@ -12,7 +12,7 @@ var watcher = glados('http://example.com/sensitive_data.html', 1000*60)
 .on('change',function(diff){
 	// do something with diff
 })
-.on('connection',function(data){ // connection event on first response
+.on('connection',function(data){
 	// data = response from first poll
 })
 .on('error',function(err){
