@@ -1,3 +1,5 @@
+[![Build Status](https://secure.travis-ci.org/fluffybunnies/glados.png)](http://travis-ci.org/fluffybunnies/glados)
+
 # glados
 Monitor remote resource for changes
 
