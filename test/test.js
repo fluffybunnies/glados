@@ -30,7 +30,7 @@ test('worky',function(t){
 					watcher.stop();
 					s.close();
 					clearTimeout(failback);
-					t.ok(diff.added[0] == 'x' && diff.removed[0] == 'c' && !diff.added[1] && !diff.removed[1], 'diff confirmed');
+					t.ok(diff[1].removed && diff[2].added, 'diff confirmed');
 				})
 			})
 		})
