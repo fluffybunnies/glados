@@ -27,11 +27,15 @@ test('worky',function(t){
 				if (gotPoll) return;
 				gotPoll = true;
 				watcher.on('change',function(diff){
-					console.log('diff',diff);
-					t.ok(false, 'write this test');
 					watcher.stop();
+					s.close();
+					clearTimeout(failback);
+					t.ok(diff.added[0] == 'x' && diff.removed[0] == 'c' && !diff.added[1] && !diff.removed[1], 'diff confirmed');
 				})
 			})
+		})
+		.on('error',function(err){
+			t.fail(err)
 		})
 
 	})
@@ -39,14 +43,71 @@ test('worky',function(t){
 	failback = setTimeout(function(){
 		//s._connections && s.close();
 		s.close();
-		t.fail();
+		t.fail('timeout');
 	},2000);
 
 });
 
+test('no change',function(t){
+	t.plan(1);
+
+	var s,watcher;
+	s = startServer(function(){
+		serverData = 'abcd\nefgh\n';
+		watcher = glados('http://localhost:3001', 50)
+		.on('change',function(){
+			watcher.stop()
+			s.close()
+			t.fail('should not have triggered change event')
+		})
+	})
+
+	setTimeout(function(){
+		watcher.stop()
+		s.close()
+		t.ok(true, 'nothing changed')
+	},500)
+
+})
+
+test('http error',function(t){
+	t.plan(1);
+
+	var s,failback;
+
+	s = startServer(function(){
+		serverData = 'a\nb\nc\nd\ne';
+		var watcher = glados('http://localhost:3001', 50)
+		.on('change',function(){
+			t.fail('should have stopped (change1)')
+		})
+		.on('connection',function(){
+			s.close()
+			serverData = 'a\nb\nx\nd\ne';
+			watcher.on('poll',function(){
+				watcher.on('change',function(){
+					t.fail('should have stopped (change2)')
+				})
+			})
+		})
+		.on('error',function(err){
+			watcher.stop()
+			clearTimeout(failback)
+			t.ok(true, 'http error handled: '+err)
+		})
+	})
+
+	failback = setTimeout(function(){
+		s.close();
+		t.fail('timeout');
+	},2000);
+
+})
 
 function startServer(cb){
 	return http.createServer(function(req,res){
-		res.end(serverData);
+		process.nextTick(function(){
+			res.end(serverData);
+		});
 	}).listen(3001,cb);
 }
