@@ -3,6 +3,8 @@
 # glados
 Monitor remote resource for changes
 
+Use the cli wrapper to send an email notification or POST to a url when the reource has changed.
+
 
 ### App
 ```javascript
@@ -26,13 +28,21 @@ var watcher = glados('http://example.com/sensitive_data.html', 1000*60)
 `-p` - optional endpoint to post diff on change<br />
 `-m` - optional email address to send diff on change<br />
 ```bash
-node cli.js http://example.com/sensitive_data.html -n60000 \
+node ./bin/cli.js http://example.com/sensitive_data.html -n60000 \
 -p http://myapi.example.com/notify_change \
 -m ohsosexybrit@gmail.com
 ```
 
 
+### Forever Wrapper
+Make sure this thing never goes down
+```
+./bin/forever.sh http://example.com/sensitive_data.html -n60000 \
+-p http://myapi.example.com/notify_change \
+-m ohsosexybrit@gmail.com
+```
+Kill the process, stop the forever, reboot the instance. Baby will still be kickin.
+
+
 ### To Do
-- Write parent script + example to forever cli.js
-	- Save data on hand so when we boot back up, we won't have missed a change
-- Finish Readme
+- Improve Readme
