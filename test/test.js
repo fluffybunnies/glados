@@ -5,7 +5,7 @@ var test = require('tape')
 
 
 test('worky',function(t){
-	t.plan(3);
+	t.plan(5);
 
 	var gotChange = false
 	,gotPoll = false
@@ -21,16 +21,18 @@ test('worky',function(t){
 			t.ok(true, 'got first change event');
 		})
 		.on('connection',function(data){ // connection event on first response
+			t.ok(data instanceof Buffer, 'data passed to \'connection\' is a Buffer')
 			t.ok(data.toString() == serverData, 'connection passeth data')
 			serverData = 'a\nb\nx\nd\ne';
 			watcher.on('poll',function(){ // poll event sent right before request
 				if (gotPoll) return;
 				gotPoll = true;
-				watcher.on('change',function(diff){
+				watcher.on('change',function(diff, data){
+					t.ok(diff[1].removed && diff[2].added, 'diff confirmed');
+					t.ok(data instanceof Buffer, 'data passed to \'change\' is a Buffer')
 					watcher.stop();
 					s.close();
 					clearTimeout(failback);
-					t.ok(diff[1].removed && diff[2].added, 'diff confirmed');
 				})
 			})
 		})

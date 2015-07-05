@@ -58,9 +58,10 @@ _int_ `pollInterval` - interval in ms to check resource for changes. defaults to
 ##### watcher.stop()
 Stop watching. No further events will be fired after this is called.
 
-##### watcher.on('change', function(diff){})
+##### watcher.on('change', function(diff, data){})
 Fired when a change has been detected in remote resource<br />
 _Array_ `diff` - an array of data comprising added, removed, and unchanged chunks
+_Buffer_ `data` - the new data unadulterated
 
 ##### watcher.on('connection', function(data){})
 Fired on response from initial poll<br />

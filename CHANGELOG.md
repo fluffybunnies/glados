@@ -1,3 +1,15 @@
+## 0.0.11 (2015-07-05)
+
+Features
+
+	- Added raw `data` argument to `'change'` event
+
+Bugs
+
+	- `data` passed to `'connection'` event is now a Buffer as advertised in docs
+
+
+
 ## 0.0.10 (2015-07-05)
 
 Features

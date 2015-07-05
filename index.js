@@ -39,17 +39,17 @@ module.exports = function(url, pollInterval, useSavedData){
 			if (stopped) return;
 			if (err) return w.emit('error',err);
 			var thisPollData = data.toString();
-			w.emit('_polled',thisPollData); if (stopped) return;
+			w.emit('_polled',data); if (stopped) return;
 			if (!connected) {
 				connected = true;
-				w.emit('connection', thisPollData);
+				w.emit('connection', data);
 				if (stopped) return;
 			}
 			if (lastPollData != thisPollData && lastPollData !== undef) {
 				var d = diff.diffLines(lastPollData,thisPollData);
 				if (!d[1])
 					return w.emit('error','new data but diff algo failed to notice');
-				w.emit('change',d);
+				w.emit('change', d, data);
 				if (stopped) return;
 			}
 			lastPollData = thisPollData;

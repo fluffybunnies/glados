@@ -1,3 +1,6 @@
+/*
+node test/cli_endpoint.js
+*/
 
 var querystring = require('querystring');
 require('http').createServer(function(req,res){
