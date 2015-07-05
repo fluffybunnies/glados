@@ -29,3 +29,6 @@ run="$angel $@"
 key="$angel $1"
 crontab_add "$key" "* * * * * $run >> /var/log/glados.log 2>&1"
 
+
+echo "shutdown:"
+echo "$APP_PATH/kill_forever.sh '$1'"
