@@ -54,3 +54,19 @@ Kill the process, stop the forever, reboot the instance. Baby will still be kick
 	- Shutdown script
 	- Save data locally in case of reboot to avoid missing a change event
 - Improve Readme
+
+<!--
+cd /root
+git clone https://github.com/fluffybunnies/glados.git
+cd glados
+npm install
+echo '' > ./config.local.json && vim ./config.local.json
+
+node ./bin/cli.js http://www.huffingtonpost.com \
+-m volcomstoner2689@gmail.com
+
+/bin/bash ./bin/forever.sh http://data.iana.org/TLD/tlds-alpha-by-domain.txt \
+-m volcomstoner2689@gmail.com
+-->
+
+
