@@ -9,10 +9,10 @@ var argv = require('minimist')(process.argv.slice(2))
 ,sext = require('sext')
 ,querystring = require('querystring')
 ,glados = require('../')
-,httpPost = require('./lib/http_post')
-,sendEmail = require('./lib/send_email')
-,htmlDiff = require('./lib/html_diff')
-,plaintextDiff = require('./lib/plaintext_diff')
+,httpPost = require('../lib/http_post')
+,sendEmail = require('../lib/send_email')
+,htmlDiff = require('../lib/html_diff')
+,plaintextDiff = require('../lib/plaintext_diff')
 
 var watch = argv._[0]
 ,pollInterval = argv.n || argv.interval
