@@ -1,3 +1,11 @@
+## 0.0.7 (2015-07-05)
+
+Features
+
+	- Improved readme
+
+
+
 ## 0.0.6 (2015-07-05)
 
 Features
