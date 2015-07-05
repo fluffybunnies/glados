@@ -16,7 +16,7 @@ fi
 angel=`realpath "$0"`
 cli=`realpath "./bin/cli.js"`
 
-run="$forevs start --spinSleepTime 1000 --minUptime 500 $cli $@"
+run="$forevs start --spinSleepTime 1000 --minUptime 500 $cli $@ --save"
 #key="$cli $@"
 key="$cli $1"
 check=`$forevs list | grep "$key"`

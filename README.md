@@ -106,7 +106,7 @@ Set your AWS secret and key, along with an approved From address
 
 ## To Do
 - Forever updates
-	- Save data locally in case of reboot to avoid missing a change event
+	- Delete save data appropriately
 
 
 

@@ -5,7 +5,7 @@ var events = require('events')
 ,httpGet = require('./lib/http_get.js')
 ,defaultPollInterval = 1000*60
 
-module.exports = function(url, pollInterval){
+module.exports = function(url, pollInterval, useSavedData){
 	if (isNaN(pollInterval = +pollInterval))
 		pollInterval = defaultPollInterval;
 	var w = new events.EventEmitter
@@ -28,12 +28,18 @@ module.exports = function(url, pollInterval){
 	}
 
 	var lastPollData, undef;
+	if (useSavedData) {
+		lastPollData = useSavedData.toString();
+		connected = true;
+	}
+
 	function poll(){
 		w.emit('poll');
 		httpGet(url,function(err, data){
 			if (stopped) return;
 			if (err) return w.emit('error',err);
 			var thisPollData = data.toString();
+			w.emit('_polled',thisPollData); if (stopped) return;
 			if (!connected) {
 				connected = true;
 				w.emit('connection', thisPollData);
