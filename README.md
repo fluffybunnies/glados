@@ -2,7 +2,7 @@
 
 # glados
 Monitor remote resource for changes
-- Use the cli wrapper to send an email notification or POST to a url when the reource has changed
+- Use the cli wrapper to send an email notification or POST to a url when the resource has changed
 - Supports Gmail and SES for email
 - Diffs are calculated using kpdecker's [diff](https://www.npmjs.com/package/diff)
 - Will not start polling until client binds to `'change'`
@@ -29,7 +29,7 @@ var watcher = glados('http://example.com/sensitive_data.html', 1000*60)
 See api notes below for opts
 ```bash
 node ./bin/cli.js http://example.com/sensitive_data.html -n60000 \
--p http://ace.fabfitfun.com/demo \
+-p http://myapi.example.com/notify_change \
 -m volcomstoner2689@gmail.com
 ```
 
@@ -44,7 +44,7 @@ Make sure this thing never goes down. Wraps cli.js with sturdiness
 Kill the process, stop the forever, reboot the instance. Baby will still be kickin.
 
 
-### Kill Forever
+#### Kill Forever
 Shut down what you started with `forever.sh`
 ```
 ./bin/kill_forever.sh http://example.com/sensitive_data.html
