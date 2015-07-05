@@ -19,7 +19,7 @@ var watch = argv._[0]
 ,pollInterval = argv.n || argv.interval
 ,handlerEndpoints = argv.p || argv.post
 ,handlerEmails = argv.m || argv.email
-,useSavedData = (argv.s || argv.save) ? '/tmp/glados.'+watch : false
+,useSavedData = (argv.s || argv.save) ? '/tmp/glados.'+watch.replace(/[^a-zA-Z0-9_\-.:]/g,'_') : false
 if (handlerEndpoints && typeof handlerEndpoints == 'string')
 	handlerEndpoints = [handlerEndpoints];
 if (handlerEmails && typeof handlerEmails == 'string')
