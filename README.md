@@ -104,10 +104,6 @@ Set `mailTransport` to 'ses'<br />
 Set your AWS secret and key, along with an approved From address
 
 
-## To Do
-- Forever updates
-	- Delete save data appropriately
-
 
 
 <!--

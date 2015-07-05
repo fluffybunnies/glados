@@ -1,3 +1,11 @@
+## 0.0.10 (2015-07-05)
+
+Features
+
+	- Save data locally when using `forever.sh` so we don't miss any changes while rebooting
+
+
+
 ## 0.0.7 (2015-07-05)
 
 Features
