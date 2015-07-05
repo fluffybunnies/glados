@@ -43,10 +43,11 @@ var watcher = glados(watch, pollInterval)
 function handleDiff(diff){
 	console.log('------ DIFF '+new Date+' ------');
 	if (handlerEndpoints) {
-		var postData = querystring.stringify({diff:JSON.stringify(diff)});
+		var postData = querystring.stringify({diff:JSON.stringify(diff)})
+			,opts = {headers:{'content-type':'application/x-www-form-urlencoded'}}
 		handlerEndpoints.forEach(function(endpoint){
 			console.log('posting diff to '+endpoint+'...');
-			httpPost(endpoint, postData, function(err,data){
+			httpPost(endpoint, postData, opts, function(err,data){
 				if (err)
 					return console.log('error from '+endpoint+': ', err);
 				console.log('response from '+endpoint+':\n'+data.toString());

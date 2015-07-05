@@ -63,8 +63,11 @@ cd glados
 npm install
 echo '' > ./config.local.json && vim ./config.local.json
 
-node /root/glados/bin/cli.js http://www.huffingtonpost.com \
+node /root/glados/bin/cli.js http://www.huffingtonpost.com -n5000 \
 -m volcomstoner2689@gmail.com
+
+node /root/glados/bin/cli.js http://www.huffingtonpost.com -n5000 \
+-p http://ace.fabfitfun.com/glados.php
 
 /bin/bash /root/glados/bin/forever.sh http://data.iana.org/TLD/tlds-alpha-by-domain.txt \
 -m volcomstoner2689@gmail.com
