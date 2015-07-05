@@ -56,8 +56,12 @@ function handleDiff(diff){
 	if (handlerEmails) {
 		var opts = {
 			subject: 'GLaDOS change ('+watch+')'
-			,html: htmlDiff(diff)
-			,text: plaintextDiff(diff)
+			,html: htmlDiff(diff, true)
+			,text: plaintextDiff(diff, true)
+		  ,attachments: [
+		  	{ filename: 'diff.txt', content: plaintextDiff(diff) }
+				//,{ filename: 'diff.html', content: htmlDiff(diff) }
+		  ]
 		}
 		handlerEmails.forEach(function(email){
 			console.log('emailing diff to '+email+'...');

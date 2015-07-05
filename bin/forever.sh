@@ -8,7 +8,7 @@ forevs=`which forever`
 if [ ! "$forevs" ]; then
 	if [ -f /usr/local/bin/forever ]; then forevs=/usr/local/bin/forever
 	elif [ -f /usr/bin/forever ]; then forevs=/usr/bin/forever
-	else
+	elif [ -f /usr/bin/apt-get ]; then
 		echo "unable to locate forever. attempting apt install..."
 		/usr/bin/apt-get install --assume-yes forever
 		forevs=`which forever`
