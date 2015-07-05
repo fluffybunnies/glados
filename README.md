@@ -32,13 +32,13 @@ node ./bin/cli.js http://example.com/sensitive_data.html -n60000 \
 
 
 ## Forever Wrapper
-Make sure this thing never goes down. Wraps cli.js with sturdiness
+Make sure this thing never goes down. Wraps cli.js with sturdiness.
+Kill the process, stop the forever, reboot the instance. Baby will still be kickin.
 ```
 ./bin/forever.sh http://example.com/sensitive_data.html -n60000 \
 -p http://myapi.example.com/notify_change \
 -m ohsosexybrit@gmail.com
 ```
-Kill the process, stop the forever, reboot the instance. Baby will still be kickin.
 
 
 ##### Kill Forever
