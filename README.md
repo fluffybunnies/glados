@@ -93,7 +93,7 @@ Applies to both `cli.js` and `forever.sh`
 
 
 ## Email
-Copy `config.sh` to `config.local.sh` and add credentials
+Copy `config.json` to `config.local.json` and add credentials
 
 ##### Gmail
 Set `mailTransport` to 'gmail'<br />
