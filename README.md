@@ -4,6 +4,8 @@
 Monitor remote resource for changes
 
 Use the cli wrapper to send an email notification or POST to a url when the reource has changed.
+Supports Gmail and SES for email.
+Diffs are calculated using kpdecker's [diff](https://www.npmjs.com/package/diff).
 
 
 ### App
@@ -45,4 +47,5 @@ Kill the process, stop the forever, reboot the instance. Baby will still be kick
 
 
 ### To Do
+- Forever update: Save data locally in case of reboot to avoid missing a change event.
 - Improve Readme
