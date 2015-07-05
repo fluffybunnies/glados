@@ -46,6 +46,13 @@ Make sure this thing never goes down. Wraps cli.js with sturdiness
 Kill the process, stop the forever, reboot the instance. Baby will still be kickin.
 
 
+### Kill Forever
+Shut down what you started with `forever.sh`
+```
+./bin/kill_forever.sh http://example.com/sensitive_data.html
+```
+
+
 ### To Do
 - Forever updates
 	- Save data locally in case of reboot to avoid missing a change event
