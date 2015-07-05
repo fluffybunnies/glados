@@ -47,5 +47,6 @@ Kill the process, stop the forever, reboot the instance. Baby will still be kick
 
 
 ### To Do
+- Email plaintext diff as attachment
 - Forever update: Save data locally in case of reboot to avoid missing a change event
 - Improve Readme
