@@ -31,3 +31,8 @@ if [ "$forevs" ]; then
 	fi
 fi
 
+saveDataFile=/tmp/glados.`echo "$1" | sed 's/[^a-zA-Z0-9_\.-]/_/g'`
+if [ -f "$saveDataFile" ]; then
+	echo "rm $saveDataFile..."
+	rm "$saveDataFile"
+fi
