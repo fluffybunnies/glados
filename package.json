@@ -4,8 +4,9 @@
 	"description": "Monitor remote resource for changes",
 	"keywords": [
 		"monitor",
+		"remote",
 		"diff",
-		"remote"
+		"email"
 	],
 	"homepage": "https://github.com/fluffybunnies/glados",
 	"author": "fluffybunnies",
