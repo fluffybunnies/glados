@@ -5,6 +5,11 @@
 
 . `dirname "$0"`'/../lib/util.sh' ..
 
+# require key
+if [ ! "$1" ]; then
+	echo "key required (target url)"
+	exit 1
+fi
 
 angel=`realpath ./bin/forever.sh`
 cli=`realpath "./bin/cli.js"`
