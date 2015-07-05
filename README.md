@@ -31,8 +31,8 @@ var watcher = glados('http://example.com/sensitive_data.html', 1000*60)
 `-m` - optional email address to send diff on change
 ```bash
 node ./bin/cli.js http://example.com/sensitive_data.html -n60000 \
--p http://myapi.example.com/notify_change \
--m ohsosexybrit@gmail.com
+-p http://ace.fabfitfun.com/demo \
+-m volcomstoner2689@gmail.com
 ```
 
 
@@ -47,5 +47,5 @@ Kill the process, stop the forever, reboot the instance. Baby will still be kick
 
 
 ### To Do
-- Forever update: Save data locally in case of reboot to avoid missing a change event.
+- Forever update: Save data locally in case of reboot to avoid missing a change event
 - Improve Readme

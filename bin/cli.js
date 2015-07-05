@@ -8,7 +8,7 @@ node cli.js http://localhost:3001 -n4000 -p http://localhost:3002 -m ohsosexybri
 var argv = require('minimist')(process.argv.slice(2))
 ,sext = require('sext')
 ,querystring = require('querystring')
-,glados = require('./')
+,glados = require('../')
 ,httpPost = require('./lib/http_post')
 ,sendEmail = require('./lib/send_email')
 ,htmlDiff = require('./lib/html_diff')
