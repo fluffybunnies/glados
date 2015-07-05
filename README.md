@@ -37,7 +37,8 @@ node ./bin/cli.js http://example.com/sensitive_data.html -n60000 \
 
 
 ### Forever Wrapper
-Make sure this thing never goes down
+Make sure this thing never goes down<br />
+Wraps cli.js with sturdiness
 ```
 ./bin/forever.sh http://example.com/sensitive_data.html -n60000 \
 -p http://myapi.example.com/notify_change \
