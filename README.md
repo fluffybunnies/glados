@@ -96,14 +96,14 @@ Applies to both `cli.js` and `forever.sh`
 
 
 ## Email
-Copy &nbsp; `config.sh` &nbsp; to &nbsp; `config.local.sh` &nbsp; and add credentials
+Copy &nbsp;`config.sh`&nbsp; to &nbsp;`config.local.sh`&nbsp; and add credentials
 
 ##### Gmail
-Set &nbsp; `mailTransport` &nbsp; to 'gmail'<br />
+Set &nbsp;`mailTransport`&nbsp; to 'gmail'<br />
 Use an application password (not your personal account password)
 
 ##### SES
-Set &nbsp; `mailTransport` &nbsp; to 'ses'<br />
+Set &nbsp;`mailTransport`&nbsp; to 'ses'<br />
 Set your AWS secret and key, along with an approved From address
 
 
