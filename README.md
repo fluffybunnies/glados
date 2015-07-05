@@ -49,5 +49,8 @@ Kill the process, stop the forever, reboot the instance. Baby will still be kick
 ### To Do
 - Email plaintext diff as attachment
 - Change post format so that PHP's magic $_POST picks up the data
-- Forever update: Save data locally in case of reboot to avoid missing a change event
+- Forever updates
+	- Modify key to be the target url instead of the entire command
+	- Shutdown script
+	- Save data locally in case of reboot to avoid missing a change event
 - Improve Readme
