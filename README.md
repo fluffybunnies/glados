@@ -48,7 +48,6 @@ Kill the process, stop the forever, reboot the instance. Baby will still be kick
 
 ### To Do
 - Forever updates
-	- Modify key to be the target url instead of the entire command
 	- Save data locally in case of reboot to avoid missing a change event
 - Improve Readme
 

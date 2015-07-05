@@ -17,16 +17,15 @@ angel=`realpath "$0"`
 cli=`realpath "./bin/cli.js"`
 
 run="$forevs start --spinSleepTime 1000 --minUptime 500 $cli $@"
-key="$cli $@"
+#key="$cli $@"
+key="$cli $1"
 check=`$forevs list | grep "$key"`
 if [ ! "$check" ]; then
 	$run
 fi
 
 run="$angel $@"
-key=$run
-check=`crontab -l | grep "$key"`
-if [ ! "$check" ]; then
-	crontab_add "$key" "* * * * * $run >> /var/log/glados.log 2>&1"
-fi
+#key=$run
+key="$angel $1"
+crontab_add "$key" "* * * * * $run >> /var/log/glados.log 2>&1"
 

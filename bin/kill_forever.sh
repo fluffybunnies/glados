@@ -9,12 +9,14 @@
 angel=`realpath ./bin/forever.sh`
 cli=`realpath "./bin/cli.js"`
 
-key="$angel $@"
+#key="$angel $@"
+key="$angel $1"
 echo "removing crontab..."
 crontab_remove "$key"
 
 forevs=`locate_forever`
-key="$cli $@"
+#key="$cli $@"
+key="$cli $1"
 if [ "$forevs" ]; then
 	key="$cli $@"
 	fid=`$forevs list | grep "$key" | awk '{print $3}' | sed -e 's/\[\|\]//g' | head -n1`
