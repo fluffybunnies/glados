@@ -28,7 +28,7 @@ if (!watch) {
 	process.exit();
 }
 console.log('watching: '+watch);
-console.log('pollInterval: '+pollInterval);
+console.log('pollInterval: '+(typeof pollInterval == 'undefined' ? '[default]' : pollInterval));
 if (handlerEndpoints) console.log('handlerEndpoints: '+handlerEndpoints.join(' '));
 if (handlerEmails) console.log('handlerEmails: '+handlerEmails.join(' '));
 
