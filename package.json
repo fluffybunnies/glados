@@ -1,6 +1,6 @@
 {
 	"name": "glados",
-	"version": "0.0.7",
+	"version": "0.0.8",
 	"description": "Monitor remote resource for changes",
 	"keywords": [
 		"monitor",
