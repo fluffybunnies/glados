@@ -1,3 +1,12 @@
+## 0.0.6 (2015-07-05)
+
+Features
+
+	- Script to shutdown what `forever.sh` started: `kill_forever.sh`
+	- Key forevers to target url instead of entire command. This allows argument adjustments without duplicating processes
+
+
+
 ## 0.0.5 (2015-07-05)
 
 Features
