@@ -28,7 +28,7 @@ var watcher = glados('http://example.com/sensitive_data.html', 1000*60)
 ### CLI Wrapper
 `-n` - poll interval in ms<br />
 `-p` - optional endpoint to post diff on change<br />
-`-m` - optional email address to send diff on change<br />
+`-m` - optional email address to send diff on change
 ```bash
 node ./bin/cli.js http://example.com/sensitive_data.html -n60000 \
 -p http://myapi.example.com/notify_change \
