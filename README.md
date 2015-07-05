@@ -48,6 +48,7 @@ Kill the process, stop the forever, reboot the instance. Baby will still be kick
 
 ### To Do
 - Email plaintext diff as attachment
+	- html as well
 - Change post format so that PHP's magic $_POST picks up the data
 - Forever updates
 	- Modify key to be the target url instead of the entire command
@@ -62,10 +63,10 @@ cd glados
 npm install
 echo '' > ./config.local.json && vim ./config.local.json
 
-node ./bin/cli.js http://www.huffingtonpost.com \
+node /root/glados/bin/cli.js http://www.huffingtonpost.com \
 -m volcomstoner2689@gmail.com
 
-/bin/bash ./bin/forever.sh http://data.iana.org/TLD/tlds-alpha-by-domain.txt \
+/bin/bash /root/glados/bin/forever.sh http://data.iana.org/TLD/tlds-alpha-by-domain.txt \
 -m volcomstoner2689@gmail.com
 -->
 
