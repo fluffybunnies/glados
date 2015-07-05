@@ -80,7 +80,7 @@ Catch errors in the stream
 
 #### Arguments
 Applies to both `cli.js` and `forever.sh`
-- `[target url]`
+- `[target]`
 	- url of resource to watch
 - `-n` or `--interval`
 	- pollInterval
