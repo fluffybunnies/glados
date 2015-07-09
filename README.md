@@ -68,7 +68,7 @@ Fired on response from initial poll<br />
 _Buffer_ `data` - the response data
 
 ##### watcher.on('poll', function(){})
-Fired immediately prior to each poll. The first `'poll'` event occurs before `'connection'`<br />
+Fired immediately prior to each poll. The first `'poll'` event occurs before `'connection'`
 
 ##### watcher.on('error', function(err){})
 Catch errors in the stream
