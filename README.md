@@ -110,6 +110,7 @@ Set your AWS secret and key, along with an approved From address
 ## To Do
 - Using the softmatch option (`kill_forever.sh -s "substring"`) currently kills only the first match found, but deletes all matching saved data
 	- Update script to kill all matches as advertised in readme
+- Add screenshot of pretty email to readme
 
 
 <!--
