@@ -5,7 +5,7 @@ Monitor remote resource for changes
 - Use the cli wrapper to send an email notification or POST to a url when the resource has changed
 - Diffs are calculated using kpdecker's [diff](https://www.npmjs.com/package/diff)
 - Will not start polling until client binds to `'change'`
-- Supports Gmail and SES for email
+- Supports Gmail and SES for email notifications
 
 
 ## App
@@ -45,6 +45,8 @@ Kill the process, stop the forever, reboot the instance. Baby will still be kick
 Shut down what you started with `forever.sh`
 ```
 ./bin/kill_forever.sh http://example.com/sensitive_data.html
+# or kill processes that contain -s:
+./bin/kill_forever.sh -s sensitive_data.html
 ```
 
 
