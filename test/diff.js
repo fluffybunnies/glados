@@ -9,6 +9,6 @@ var a = fs.readFileSync(__dirname+'/a.txt').toString();
 var b = fs.readFileSync(__dirname+'/b.txt').toString();
 
 console.log(
-	require('../lib/console_diff.js')(diff.diffLines(a,b))
+	require('../lib/cli_diff.js')(diff.diffLines(a,b))
 )
 

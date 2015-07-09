@@ -17,7 +17,7 @@ module.exports = function(url, pollInterval, useSavedData){
 	w.on = function(evt){
 		if (!someonesListening && evt == 'change') {
 			someonesListening = true;
-			poll();
+			process.nextTick(poll);
 		}
 		return on_.apply(w,arguments);
 	}

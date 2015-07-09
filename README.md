@@ -33,7 +33,8 @@ node ./bin/cli.js http://example.com/sensitive_data.html -n60000 \
 
 ## Forever Wrapper
 Make sure this thing never goes down. Wraps cli.js with sturdiness.<br />
-Kill the process, stop the forever, reboot the instance. Baby will still be kickin.
+Kill the process, stop the forever, reboot the instance. Baby will still be kickin.<br />
+Most recently polled data is saved to tmp file in case process dies and reboots.
 ```
 ./bin/forever.sh http://example.com/sensitive_data.html -n60000 \
 -p http://myapi.example.com/notify_change \
@@ -128,6 +129,13 @@ node /root/glados/bin/cli.js http://www.huffingtonpost.com -n5000 \
 
 /bin/bash /root/glados/bin/forever.sh http://data.iana.org/TLD/tlds-alpha-by-domain.txt \
 -m volcomstoner2689@gmail.com
+
+To Do
+	- New sire module with simple index.php that generates content based on domain string
+	- On TLD change, nab as many BrandName.NewTLDs as possible and point DNS to this server
+		- Option to automate, but default to sending an email to self
+		- If I click on confirm button, it'll start buying
+		- If I don't click on confirm button within X time and the # new domains is reasonable, start buying
 -->
 
 
