@@ -5,7 +5,9 @@ Monitor remote resource for changes
 - Use the cli wrapper to send an email notification or POST to a url when the resource has changed
 - Diffs are calculated using kpdecker's [diff](https://www.npmjs.com/package/diff)
 - Will not start polling until client binds to `'change'`
-- Supports Gmail and SES for email notifications
+- Use the CLI Wrapper to take action on `'change'`
+	- POST to an endpoint, or
+	- send email notification (supports Gmail and SES)
 
 
 ## App
