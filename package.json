@@ -1,12 +1,14 @@
 {
 	"name": "glados",
-	"version": "0.0.12",
+	"version": "1.0.0",
 	"description": "Monitor remote resource for changes",
 	"keywords": [
-		"notify",
 		"monitor",
-		"remote",
+		"change",
 		"diff",
+		"remote",
+		"url",
+		"notify",
 		"email"
 	],
 	"homepage": "https://github.com/fluffybunnies/glados",

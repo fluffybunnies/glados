@@ -45,7 +45,7 @@ Kill the process, stop the forever, reboot the instance. Baby will still be kick
 Shut down what you started with `forever.sh`
 ```
 ./bin/kill_forever.sh http://example.com/sensitive_data.html
-# or kill processes that contain -s:
+# or kill processes that contain -s (softmatch):
 ./bin/kill_forever.sh -s sensitive_data.html
 ```
 

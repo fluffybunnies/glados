@@ -1,3 +1,17 @@
+## 1.0.0 (2015-07-09)
+
+Features
+
+	- Added a softmatch `-s` option for `kill_forever.sh`
+	- Removed clutter in /var/log/glados.log
+	- Bumped to 1.0.0: Features vetted, nothing new planned for near future
+
+Bugs
+
+	- `kill_forever.sh` was using arguments to generate a too-specific key, which could lead to forever not stopping
+
+
+
 ## 0.0.11 (2015-07-05)
 
 Features
