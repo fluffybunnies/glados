@@ -55,22 +55,22 @@ Shut down what you started with `forever.sh`
 
 ## App Api
 
-##### glados( ttl [, pollInterval] )
+##### glados( url [, pollInterval] )
 returns a `watcher` that will monitor changes of `url`<br />
-_string_ `url` - remote resource to watch<br />
-_int_ `pollInterval` - interval in ms to check resource for changes. defaults to 1 minute
+`url` _string_ - remote resource to watch<br />
+`pollInterval` _int_ - interval in ms to check resource for changes. defaults to 1 minute
 
 ##### watcher.stop()
 Stop watching. No further events will be fired after this is called.
 
 ##### watcher.on('change', function(diff, data){})
 Fired when a change has been detected in remote resource<br />
-_Array_ `diff` - an array of data comprising added, removed, and unchanged chunks<br />
-_Buffer_ `data` - the new data, unadulterated
+`diff` _Array_ - an array of data comprising added, removed, and unchanged chunks<br />
+`data` _Buffer_ - the new data, unadulterated
 
 ##### watcher.on('connection', function(data){})
 Fired on response from initial poll<br />
-_Buffer_ `data` - the response data
+`data` _Buffer_ - the response data
 
 ##### watcher.on('poll', function(){})
 Fired immediately prior to each poll. The first `'poll'` event occurs before `'connection'`

@@ -8,7 +8,7 @@
 
 forevs=`locate_forever`
 if [ ! "$forevs" ]; then
-	echo "unable to locate forever. quitting..."
+	>&2 echo "unable to locate forever. quitting..."
 	exit 1
 fi
 
